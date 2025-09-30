@@ -1,2 +1,2 @@
 ## ⚾ Baseball Simulator
-🧑‍💻 **By Jeremy Thompson**
+#####🧑‍💻 **By Jeremy Thompson**
