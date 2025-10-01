@@ -1,36 +1,49 @@
 ## ⚾ Baseball Simulator
-##### 🧑‍💻 **By Jeremy Thompson**
+##### 🧑‍💻 By Jeremy Thompson
+
 ### 📖 Project Overview
-This project is a baseball simulation engine that models offensive production for a given MLB lineup. The model uses live player data to improve simulation accuracy and usefulness throughout the season. By using the simulator, important strategic questions can be answered for individual teams and for the MLB as a whole. 
+This project is an end-to-end baseball analytics simulator that combines **web scraping, data wrangling, simulation modeling, and optimization** to answer strategic baseball questions and identify optimal batting orders.
 
-I built this to combine my interests in sports analytics, probability modeling, and algorithm design — while also showcasing practical skills in Python, web scraping, data structures, and optimization techniques.
+I built this project to demonstrate my ability to:
+- Collect and clean messy real-world data.
+- Model complex, probabilistic systems with object-oriented Python.
+- Apply optimization techniques like **Genetic Algorithms**.
+- Communicate results through **data visualization and scenario analysis**.
 
+### ⚙️ Tools and Technologies
+- **Python** (core simulation, classes, and algorithms)
+- **Selenium** (web scraping of dynamic MLB stats)
+- **Pandas** (data cleaning, structuring, merging)
+- **NumPy** (probability modeling, vectorized calculations)
+- **Matplotlib** (data visualization & scenario comparisons)
 
-## 🛠️ What I Built & Learned
-### Webscraping and Data Wrangling
-- Used Selenium to scrape dynamic data from various sources.
-- 
+### 🛠️ Features and Skills Demonstrated
+#### 🔎 Data Collection & Wrangling
+**Web Scraping:**
+- Used Selenium to scrape dynamic MLB statistics from multiple online sources.
+**Data Cleaning & Integration:**
+- Structured raw stats into Pandas DataFrames.
+- Merged multiple sources into one cohesive dataset for use in the simulator.
 
-### 🎲 Simulation Engine
-- Developed a stochastic game simulator that models outcomes (strikeouts, walks, singles, doubles, HRs, etc.) based on player stats.
-- Designed a BaseRunners system to track runner advancement, outs, and runs in real time.
-- Implemented probability-driven outcomes using random number generation weighted by real performance metrics.
+#### 🧩 Object-Oriented Simulation
+- Created a Player class (holds player-specific stats, calculates event probabilities).
+- Designed a BaseRunners class to track runner advancement, outs, and scoring.
+- Built functions to simulate:
+  - Lineups facing left- or right-handed pitchers.
+  - Custom scenarios (e.g., innings, lineup start spot, base/out states).
 
-### 📊 Data & Modeling
-- Encoded player stats (OBP, strikeout %, ground ball %, etc.) into probabilistic models.
-- Ran Monte Carlo simulations (1,000s of games) to calculate expected runs for each lineup.
-- Learned how variance/noise in simulation affects optimization and experimented with ways to stabilize results.
+#### 📊 Scenario Analysis
+- Investigated **“Should a team sacrifice bunt in extra innings?”**
+  - Simulated thousands of games under two conditions:
+    - Runner on 2nd, 0 outs
+    - Runner on 3rd, 1 out
+  - Compared expected run production between the two strategies.
+- Results were visualized with Matplotlib and NumPy to make insights intuitive.
 
-### 🤖 Optimization Algorithms
-- Brute force search for small player pools.
-- Genetic Algorithm for scalable optimization:
-- Population generation, fitness evaluation, elitism, crossover, and mutation.
-- Cached fitness scores for efficiency.
-- Balanced exploration vs. exploitation by tuning hyperparameters (population size, generations, elite size, mutation rate).
-
-### 💡 Key Skills Demonstrated
-- Python programming (object-oriented design, algorithms, optimization).
-- Probability & statistics (Monte Carlo simulation, distributions, variance analysis).
-- Machine learning concepts (evolutionary algorithms, stochastic optimization).
-- Data analysis & visualization (tracking convergence of GA runs, comparing lineup performance).
-- Performance tuning (profiling bottlenecks, reducing simulation noise).
+#### 🤖 Lineup Optimization
+- Implemented two approaches to find the optimal batting order:
+  - **Brute force search** (small rosters).
+  - **Genetic Algorithm (GA)** for scalable optimization:
+    - Population generation, elitism, crossover, and mutation.
+    - Cached fitness scores for efficiency.
+    - Tuned GA hyperparameters for convergence and exploration balance.
